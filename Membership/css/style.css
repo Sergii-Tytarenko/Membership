@@ -43,7 +43,7 @@
   content: "\e903";
 }
 
-._icon-switter:before {
+._icon-twitter:before {
   content: "\e904";
 }
 
@@ -123,6 +123,10 @@ body {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.2;
+}
+
+body.lock {
+  overflow: hidden;
 }
 
 .wrapper {
@@ -217,9 +221,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
-  min-height: 176px;
+  z-index: 999;
   height: 1px;
+  min-height: 176px;
   width: 100%;
 }
 
@@ -284,12 +288,27 @@ body {
 }
 
 .nav-header__link {
+  position: relative;
   display: inline-block;
   color: #333;
   font-family: Ubuntu;
   font-size: 16px;
   line-height: 1.2;
   font-weight: 500;
+}
+
+.nav-header__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
 
 @-webkit-keyframes showHeader {
@@ -372,6 +391,38 @@ body {
 .burger.active .burger__cube--s {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+}
+
+/* Burger navigation
+========================================== */
+
+.burger-nav {
+  position: fixed;
+  z-index: 100;
+  top: 176px;
+  left: 0;
+  display: none;
+  width: 100%;
+  background-color: #ccc;
+  border-top: 1px solid #333;
+}
+
+.burger-nav__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background: url("../img/icons/close.svg") center no-repeat;
+}
+
+.burger-nav.active {
+  display: block;
+}
+
+.main-header.scroll + .burger-nav {
+  top: 50px;
 }
 
 /* Intro
@@ -512,6 +563,13 @@ body {
   font-weight: 300;
 }
 
+@media (min-width: 767px) {
+  .nav-header__link:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
 @media (min-width: 768px) {
   .btn:hover,
   .btn:focus {
@@ -526,6 +584,16 @@ body {
   }
 }
 
+@media (max-width: 1400px) {
+  .main-header {
+    min-height: 100px;
+  }
+
+  .burger-nav {
+    top: 100px;
+  }
+}
+
 @media (max-width: 1366px) {
   .intro__title {
     font-size: 45px;
@@ -533,10 +601,6 @@ body {
 }
 
 @media (max-width: 1210px) {
-  .main-header {
-    min-height: calc(60px + 116 * ((100vw - 320px) / 890));
-  }
-
   .main-header__burger {
     margin-left: calc(0px + 70 * ((100vw - 320px) / 890));
   }
@@ -593,6 +657,20 @@ body {
 }
 
 @media (max-width: 920px) {
+  .main-header {
+    min-height: 60px;
+  }
+
+  .main-header__button {
+    min-width: auto;
+    padding: 0 30px;
+    height: 35px;
+  }
+
+  .burger-nav {
+    top: 60px;
+  }
+
   .benefits__list {
     margin: 0 -10px;
   }
@@ -645,11 +723,5 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
-  }
-}
-
-@media (max-height: 1035px) {
-  .main-header {
-    min-height: 100px;
   }
 }

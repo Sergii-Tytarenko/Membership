@@ -233,11 +233,36 @@ function headScroll() {
 }
 
 //Burger active
+let burgerNav = document.querySelector('.burger-nav');
+let body = document.querySelector('body');
+const closeNav = document.querySelector('.burger-nav__close');
+
 burger.addEventListener('click', function () {
     if (burger) {
         burger.classList.toggle('active');
     }
+    if ( burger.classList.contains('active') ) {
+        burgerNav.classList.add('active');
+        // body.classList.add('lock');
+    } else {
+        burgerNav.classList.remove('active');
+        // body.classList.remove('lock');
+
+    }
 });
+
+closeNav.addEventListener('click', function(){
+    burger.classList.remove('active');
+    burgerNav.classList.remove('active');
+    body.classList.remove('lock');
+});
+
+// function disableScrolling(){
+//     var e = document.querySelector("body");
+//     var x = e.scrollLeft;
+//     var y = e.scrollTop;
+//     e.onscroll = function(){e.scrollTo(x, y);};
+// };
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
