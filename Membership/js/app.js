@@ -184,34 +184,60 @@ da.init();;
 
 
 //Smoth scroll
-// const smoothLinks = document.querySelectorAll('._smooth');
+const smoothLinks = document.querySelectorAll('._smooth');
 
-// for (let smoothLink of smoothLinks) {
-//     smoothLink.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         const id = smoothLink.getAttribute('href');
+for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute('href');
 
-//         document.querySelector(id).scrollIntoView({
-//             behavior: 'smooth',
-//             block: 'start'
-//         });
-//     });
-// };
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+};
 
-// intro parallax
+// Intro parallax
+let introWrap = document.querySelector('.intro__wrap');
+const mainHeader = document.querySelector('.main-header');
+const burger = document.querySelector('.burger');
+
 document.addEventListener('scroll', function() {
-    let introWrap = document.querySelector('.intro__wrap');
     let moveHeight = pageYOffset;
-    console.log(moveHeight)
     
     if ( moveHeight > 0) {
-        let movePosition = moveHeight * 30 / 100;
+        let movePosition = moveHeight * .25;
         if (movePosition >= 0 && movePosition <= 150){
             introWrap.style.transform = `translateY(-${movePosition}px)`;
+            mainHeader.style.transform = `translateY(-${movePosition}px)`;
         }
     }
 });
-;
+
+
+// Main Header scroll
+let introWrapHeight = introWrap.offsetHeight;
+
+window.addEventListener('scroll', headScroll);
+function headScroll() {
+	let src_value = pageYOffset;
+
+	if (mainHeader !== null) {
+		if (src_value  > introWrapHeight + 50) {
+            mainHeader.classList.add('scroll');
+		} else {
+			mainHeader.classList.remove('scroll');
+		}
+	}
+}
+
+//Burger active
+burger.addEventListener('click', function () {
+    if (burger) {
+        burger.classList.toggle('active');
+    }
+});
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
