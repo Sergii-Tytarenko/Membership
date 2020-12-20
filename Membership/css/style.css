@@ -427,9 +427,9 @@ body.lock {
 .burger-nav__close {
   position: absolute;
   top: 20px;
-  right: 20px;
-  width: 15px;
-  height: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   background: url("../img/icons/close.svg") center no-repeat;
 }
@@ -662,6 +662,99 @@ body.lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about__top {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+}
+
+.about__bottom {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 66.666%;
+          flex: 0 1 66.666%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about__row--g {
+  background-color: #f1faf7;
+}
+
+.about__row--g .about__img {
+  padding-bottom: 31.58%;
+}
+
+.about__row--rev {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.about__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about__info--grey {
+  background-color: #f8f8f8;
+}
+
+.about__content {
+  max-width: 300px;
+}
+
+.about__title {
+  position: relative;
+  padding: 0 0 10px 0;
+  margin-bottom: 20px;
+  color: #141311;
+  font-size: calc(18px + 12 * ((100vw - 320px) / 1600));
+}
+
+.about__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 35px;
+  height: 2px;
+  background-color: #000;
+}
+
+.about__text {
+  font-family: 'Nunito', sans-serif;
+}
+
+.about__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+  padding-bottom: 21.053%;
 }
 
 .about__column-left {
@@ -677,56 +770,20 @@ body.lock {
           flex-direction: column;
 }
 
-.about__row {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 33.333%;
-          flex: 0 1 33.333%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.about__row--g {
-  position: relative;
-  padding-bottom: 31.58%;
-  background-color: #f1faf7;
-  background-repeat: no-repeat;
-}
-
-.about__row--g .about__item {
-  position: absolute;
-  bottom: 0;
-  z-index: 5;
-}
-
-.about__row--v {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 66.666%;
-          flex: 0 1 66.666%;
-  position: relative;
-}
-
-.about__row--v .about__item {
-  position: absolute;
-  bottom: 0;
-  color: #fff;
-  z-index: 5;
-}
-
-.about__row--v .about__img {
-  padding-bottom: 46.108%;
-}
-
-.about__item {
+.about__column-left .about__row {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
 }
 
-.about__img {
+.about__column-left .about__info,
+.about__column-left .about__img {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
+}
+
+.about__column-left .about__img {
   padding-bottom: 31.58%;
 }
 
@@ -734,24 +791,23 @@ body.lock {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  position: relative;
 }
 
-.about__column-right .about__item,
+.about__column-right .about__info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  color: #fff;
+}
+
+.about__column-right .about__title {
+  color: #fff;
+}
+
 .about__column-right .about__img {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 100%;
-          flex: 0 1 100%;
-}
-
-.text-item--gray {
-  background-color: #f8f8f8;
+  padding-bottom: 126.32%;
 }
 
 @media (min-width: 677px) {
