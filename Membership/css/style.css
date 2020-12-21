@@ -658,6 +658,10 @@ body.lock {
 /* About
 ==========================================*/
 
+.about {
+  padding-top: 100px;
+}
+
 .about__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -690,11 +694,7 @@ body.lock {
 }
 
 .about__row--g {
-  background-color: #f1faf7;
-}
-
-.about__row--g .about__img {
-  padding-bottom: 31.58%;
+  background-color: #f4f0eb;
 }
 
 .about__row--rev {
@@ -791,23 +791,36 @@ body.lock {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
-.about__column-right .about__info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  color: #fff;
+.about__column-right .about__info,
+.about__column-right .about__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
 }
 
+.about__column-right .about__img {
+  padding-bottom: 63.16%;
+}
+
+.about__column-right .about__info,
 .about__column-right .about__title {
   color: #fff;
 }
 
-.about__column-right .about__img {
-  padding-bottom: 126.32%;
+.about__column-right .about__title::after {
+  background-color: #fff;
 }
 
 @media (min-width: 677px) {
@@ -886,6 +899,10 @@ body.lock {
   .benefits {
     padding-bottom: calc(50px + 35 * ((100vw - 320px) / 890));
   }
+
+  .about {
+    padding-top: calc(40px + 60 * ((100vw - 320px) / 890));
+  }
 }
 
 @media (max-width: 1100px) {
@@ -960,6 +977,42 @@ body.lock {
 
   .item-benefits__content {
     padding: 0 15px;
+  }
+
+  .about__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .about__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .about__row--g {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .about__row--rev {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .about__info {
+    min-height: 300px;
+  }
+
+  .about__img {
+    min-height: 350px;
   }
 }
 

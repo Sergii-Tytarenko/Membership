@@ -243,17 +243,14 @@ for (let i = 0; i < burgerNavLink.length; i++) {
 function showBurgerNav () {
     burgerNav.classList.add('active');
     mainHeader.classList.add('active');
-    body.classList.add('lock');
+    // body.classList.add('lock');
 }
 
 function closeBurgerNav () {
     burgerNav.classList.remove('active');
     mainHeader.classList.remove('active');
-    body.classList.remove('lock');
-}
-
-
-;
+    // body.classList.remove('lock');
+};
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
