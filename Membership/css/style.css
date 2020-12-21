@@ -823,6 +823,112 @@ body.lock {
   background-color: #fff;
 }
 
+/* Projects
+==========================================*/
+
+._no-webp .projects {
+  background: url("../img/projects/old-moon.png"); }
+
+.projects {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.projects__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1950px;
+  padding: 0;
+}
+
+.projects__column-l {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 52.5%;
+          flex: 0 1 52.5%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.projects__column-r {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 47.5%;
+          flex: 0 1 47.5%;
+  padding: 0 0 0 180px;
+}
+
+.projects__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-height: 300px;
+  border: 30px solid #f1f1f1;
+  border-radius: 20px;
+}
+
+.projects__video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.projects__content {
+  max-width: 450px;
+  padding: 0 15px;
+}
+
+.projects__head {
+  margin-bottom: 35px;
+}
+
+.projects__title {
+  margin-bottom: 30px;
+  color: #000;
+  font-weight: 400;
+  font-size: calc(25px + 5 * ((100vw - 320px) / 1600));
+}
+
+.projects__text {
+  font-size: calc(16px + 8 * ((100vw - 320px) / 1600));
+}
+
+.projects__btn {
+  margin-top: 65px;
+  min-width: 267px;
+}
+
+.item-projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.item-projects:last-child {
+  margin: 0;
+}
+
+.item-projects__icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-right: 35px;
+}
+
+.item-projects__title {
+  margin-bottom: 15px;
+  color: #000;
+  font-size: 22px;
+  font-weight: 400;
+}
+
 @media (min-width: 677px) {
   .nav-header__list li:first-child {
     margin: 0;
@@ -845,6 +951,18 @@ body.lock {
   }
 }
 
+@media (max-width: 1650px) {
+  .projects__column-l {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 70%;
+            flex: 0 1 70%;
+  }
+
+  .projects__column-r {
+    padding: 0 0 0 80px;
+  }
+}
+
 @media (max-width: 1500px) {
   .intro__title {
     font-size: 50px;
@@ -864,6 +982,58 @@ body.lock {
 @media (max-width: 1366px) {
   .intro__title {
     font-size: 45px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .projects__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .projects__column-r {
+    padding: 0;
+    margin-bottom: 35px;
+  }
+
+  .projects__content {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .projects__title {
+    text-align: center;
+  }
+
+  .projects__text {
+    text-align: center;
+  }
+
+  .projects__list {
+    text-align: center;
+  }
+
+  .projects__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .item-projects__icon {
+    -ms-flex-item-align: initial;
+        -ms-grid-row-align: initial;
+        align-self: initial;
+    margin: 0 0 20px 0;
   }
 }
 
@@ -902,6 +1072,18 @@ body.lock {
 
   .about {
     padding-top: calc(40px + 60 * ((100vw - 320px) / 890));
+  }
+
+  .projects {
+    padding-top: calc(40px + 40 * ((100vw - 320px) / 890));
+  }
+
+  .projects {
+    padding-bottom: calc(40px + 40 * ((100vw - 320px) / 890));
+  }
+
+  .projects__btn {
+    margin-top: calc(45px + 20 * ((100vw - 320px) / 890));
   }
 }
 
@@ -1014,6 +1196,10 @@ body.lock {
   .about__img {
     min-height: 350px;
   }
+
+  .projects__wrapper {
+    border: none;
+  }
 }
 
 @media (max-width: 676px) {
@@ -1115,3 +1301,11 @@ body.lock {
     padding: 0;
   }
 }
+
+@media (max-width: 420px) {
+  .projects__content {
+    max-width: 100%;
+  }
+}
+
+._webp .projects { background: url(../img/projects/old-moon.webp); }
