@@ -250,7 +250,44 @@ function closeBurgerNav () {
     burgerNav.classList.remove('active');
     mainHeader.classList.remove('active');
     // body.classList.remove('lock');
-};
+}
+
+
+
+// Counter slider
+const counterSlider = document.querySelector('.counter__body');
+let mySwiper;
+
+function mobileSlider() {
+	if (window.innerWidth <= 1024 && counterSlider.dataset.mobile == 'false') {
+		mySwiper = new Swiper(counterSlider, {
+			slidesPerView: 1,
+            breakpoints: {
+                530: {
+                    slidesPerView: 1.5,
+                  },
+                767: {
+                  slidesPerView: 2.5,
+                }
+              }
+		});
+
+		counterSlider.dataset.mobile = 'true';
+	}
+
+	if (window.innerWidth > 1024) {
+		counterSlider.dataset.mobile = 'false';
+		if (counterSlider.classList.contains('swiper-container-initialized')) {
+			mySwiper.destroy();
+		}
+	}
+}
+
+mobileSlider()
+
+window.addEventListener('resize', () => {
+	mobileSlider();
+});;
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
