@@ -252,8 +252,6 @@ function closeBurgerNav () {
     // body.classList.remove('lock');
 }
 
-
-
 // Counter slider
 const counterSlider = document.querySelector('.counter__body');
 let mySwiper;
@@ -261,12 +259,16 @@ let mySwiper;
 function mobileSlider() {
 	if (window.innerWidth <= 1024 && counterSlider.dataset.mobile == 'false') {
 		mySwiper = new Swiper(counterSlider, {
-			slidesPerView: 1,
+            slidesPerView: 1,
+            pagination: {
+                el: '.counter__pagination',
+                type: 'bullets',
+            },
             breakpoints: {
                 530: {
                     slidesPerView: 1.5,
                   },
-                767: {
+                850: {
                   slidesPerView: 2.5,
                 }
               }
@@ -286,7 +288,7 @@ function mobileSlider() {
 mobileSlider()
 
 window.addEventListener('resize', () => {
-	mobileSlider();
+    mobileSlider();
 });;
 function testWebP(callback) {
 	var webP = new Image();

@@ -884,6 +884,7 @@ body.lock {
 
 .projects__head {
   margin-bottom: 65px;
+  padding: 0 15px;
 }
 
 .projects__title {
@@ -979,6 +980,14 @@ body.lock {
 
 .counter__column {
   margin-bottom: 50px;
+}
+
+.counter__pagination {
+  text-align: center;
+}
+
+.counter__pagination span {
+  background-color: #dadada;
 }
 
 .prices {
@@ -1747,6 +1756,12 @@ button.swiper-pagination-bullet {
   z-index: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+@media (min-width: 530px) {
+  .counter__pagination {
+    display: none;
+  }
 }
 
 @media (min-width: 677px) {
