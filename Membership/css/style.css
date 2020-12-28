@@ -1765,6 +1765,41 @@ button.swiper-pagination-bullet {
   min-width: 207px;
 }
 
+/* Counter Facts
+==========================================*/
+
+.counter__info {
+  margin: 50px auto 30px;
+  max-width: 765px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #999;
+}
+
+.facts {
+  height: 100%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.facts__number {
+  margin-bottom: 60px;
+  font-family: 'Lato';
+  font-size: 80px;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #8d7431;
+}
+
+.facts__text {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* 
+==========================================*/
+
 @media (min-width: 530px) {
   .counter__pagination {
     display: none;
@@ -1790,6 +1825,14 @@ button.swiper-pagination-bullet {
   .btn:focus {
     -webkit-box-shadow: 0 0 10px #999;
             box-shadow: 0 0 10px #999;
+  }
+}
+
+@media (min-width: 1024px) {
+  .counter--facts .counter__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
   }
 }
 
@@ -1967,6 +2010,10 @@ button.swiper-pagination-bullet {
 
   .prices__btn {
     margin-top: calc(40px + 20 * ((100vw - 320px) / 890));
+  }
+
+  .facts__number {
+    margin-bottom: calc(20px + 40 * ((100vw - 320px) / 890));
   }
 }
 
@@ -2205,26 +2252,26 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (min-width: 530px) and (max-width: 1024px) {
+  .counter--prices .counter__column--border {
+    border-left: 1px solid #252525;
+    border-right: 1px solid #252525;
+  }
+
+  .counter--prices .counter__column--border:last-child {
+    border-right: none;
+  }
+
+  .counter--prices .counter__column--border:first-child {
+    border-left: none;
+  }
+}
+
 @media (min-width: 1025px) and (max-width: 1200px) {
   .counter__column {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
-  }
-}
-
-@media (min-width: 530px) and (max-width: 1024px) {
-  .counter__column {
-    border-left: 1px solid #252525;
-    border-right: 1px solid #252525;
-  }
-
-  .counter__column:last-child {
-    border-right: none;
-  }
-
-  .counter__column:first-child {
-    border-left: none;
   }
 }
 

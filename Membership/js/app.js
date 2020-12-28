@@ -252,44 +252,49 @@ function closeBurgerNav () {
     // body.classList.remove('lock');
 }
 
-// Counter slider
-const counterSlider = document.querySelector('.counter__body');
-let mySwiper;
+// Counter sliders
+const counterSliders = document.querySelectorAll('.counter__body');
 
-function mobileSlider() {
-	if (window.innerWidth <= 1024 && counterSlider.dataset.mobile == 'false') {
-		mySwiper = new Swiper(counterSlider, {
-            slidesPerView: 1,
-            pagination: {
-                el: '.counter__pagination',
-                type: 'bullets',
-            },
-            breakpoints: {
-                530: {
-                    slidesPerView: 1.5,
-                  },
-                850: {
-                  slidesPerView: 2.5,
-                }
-              }
-		});
-
-		counterSlider.dataset.mobile = 'true';
-	}
-
-	if (window.innerWidth > 1024) {
-		counterSlider.dataset.mobile = 'false';
-		if (counterSlider.classList.contains('swiper-container-initialized')) {
-			mySwiper.destroy();
-		}
-	}
-}
-
-mobileSlider()
-
-window.addEventListener('resize', () => {
-    mobileSlider();
-});;
+counterSliders.forEach(el => {
+    let mySwiper;
+    function mobileSlider() {
+        if (window.innerWidth <= 1024 && el.dataset.mobile == 'false') {
+            mySwiper = new Swiper(el, {
+                slidesPerView: 1,
+                pagination: {
+                    el: '.counter__pagination',
+                    type: 'bullets',
+                },
+                breakpoints: {
+                    530: {
+                        slidesPerView: 1.7,
+                      },
+                    850: {
+                      slidesPerView: 2.5,
+                    }
+                  }
+            });
+    
+            el.dataset.mobile = 'true';
+        }
+    
+        if (window.innerWidth > 1024) {
+            el.dataset.mobile = 'false';
+            if (el.classList.contains('swiper-container-initialized')) {
+                mySwiper.destroy();
+                
+            }
+        }
+    }
+    
+    mobileSlider()
+    
+    window.addEventListener('resize', () => {
+        mobileSlider();
+    });
+      
+});
+;
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
