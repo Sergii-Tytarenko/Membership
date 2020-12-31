@@ -1107,6 +1107,7 @@ body.lock {
 
 .swiper-container-css-mode > .swiper-wrapper {
   overflow: auto;
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
@@ -1875,8 +1876,8 @@ button.swiper-pagination-bullet {
   z-index: 1;
 }
 
-.news__labels a,
-.news .cell__labels a {
+.news__labels span,
+.news .cell__labels span {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1895,9 +1896,6 @@ button.swiper-pagination-bullet {
   color: #fff;
   background-color: #8d7431;
   border-radius: 12.5px;
-  -webkit-transition: background .3s;
-  -o-transition: background .3s;
-  transition: background .3s;
 }
 
 .news__content {
@@ -1947,8 +1945,20 @@ button.swiper-pagination-bullet {
 }
 
 .cell__photo {
+  display: block;
   padding-bottom: 68%;
   margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.cell__photo img {
+  -webkit-transition: -webkit-filter .5s;
+  transition: -webkit-filter .5s;
+  -o-transition: filter .5s;
+  transition: filter .5s;
+  transition: filter .5s, -webkit-filter .5s;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .cell__text {
@@ -1985,16 +1995,15 @@ button.swiper-pagination-bullet {
             box-shadow: 0 0 10px #999;
   }
 
-  .news__labels a:hover,
-  .news__labels a:focus,
-  .news .cell__labels a:hover,
-  .news .cell__labels a:focus {
-    background-color: #ad861a;
-  }
-
   .news__text:hover,
   .news__text:focus {
     color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cell__photo img:hover,
+  .cell__photo img:focus {
+    -webkit-filter: brightness(1.1);
+            filter: brightness(1.1);
   }
 
   .cell__text:hover,
