@@ -2204,6 +2204,17 @@ button.swiper-pagination-bullet {
   color: #8d7431;
 }
 
+/* Partners
+==========================================*/
+
+.icon-partners {
+  overflow: hidden;
+}
+
+.main-slider {
+  overflow: hidden;
+}
+
 @media (min-width: 530px) {
   .counter__pagination {
     display: none;
@@ -2916,6 +2927,10 @@ button.swiper-pagination-bullet {
 
   .main-footer__title._active::after {
     opacity: 0;
+  }
+
+  .main-footer__list {
+    display: none;
   }
 }
 

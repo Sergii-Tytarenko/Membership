@@ -295,7 +295,27 @@ counterSliders.forEach(el => {
       
 });
 
-;
+// Partners sliders
+let iconSlider = document.querySelector('.icon-partners');
+let mainSlider = document.querySelector('.main-slider');
+
+let mySwiperIcon = new Swiper (iconSlider, {
+    spaceBetween: 10,
+    slidesPerView: 5,
+});
+
+let mySwipermain = new Swiper (mainSlider, {
+    slidesPerView: 1,
+    // loop: true,
+    // loopedSlides: 5,
+    navigation: {
+        nextEl: '.partners__button-next',
+        prevEl: '.partners__button-perv',
+    },
+    // thumbs: {
+    //     swiper: mySwiperIcon,
+    // },
+});;
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
@@ -380,9 +400,10 @@ let _slideToggle = (target, duration = 500) => {
 }
 
 //Spollers
+let spollers = document.querySelectorAll("._spoller");
+let spollersGo = true;
+
 function spollerInit () {
-	let spollers = document.querySelectorAll("._spoller");
-	let spollersGo = true;
 	if (spollers.length > 0) {
 		for (let index = 0; index < spollers.length; index++) {
 			const spoller = spollers[index];
@@ -401,11 +422,14 @@ function spollerInit () {
 					}, 500);
 				}
 			});
+
 			if (window.innerWidth > 530) {
 				spoller.classList.remove('_active');
 				spoller.nextElementSibling.style.display = 'block';
+			} else if (window.innerWidth < 530 && spoller.classList.contains('_active')) {
+				spoller.nextElementSibling.style.display = 'block';
 			} else {
-				spoller.nextElementSibling.style.display = 'none';
+				spoller.nextElementSibling.style.display = '';
 			}
 
 		}
@@ -416,4 +440,5 @@ spollerInit ();
 
 window.addEventListener('resize', () => {
 	spollerInit ();
+	spollersGo = true;
 });;
