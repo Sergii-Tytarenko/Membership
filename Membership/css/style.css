@@ -1106,7 +1106,6 @@ body.lock {
 
 .swiper-container-css-mode > .swiper-wrapper {
   overflow: auto;
-  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
@@ -2096,6 +2095,200 @@ button.swiper-pagination-bullet {
   margin-top: 20px;
 }
 
+/* Partners
+==========================================*/
+
+/* Slider */
+
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-track:before,
+.slick-track:after {
+  content: "";
+  display: table;
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.partners {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: #333;
+}
+
+.partners__title {
+  margin-bottom: 80px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.partners__icons {
+  margin-bottom: 125px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.partners__button {
+  margin: 40px auto 0;
+}
+
+.partners__button-next,
+.partners__button-perv {
+  display: inline-block;
+  width: 9px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.partners__button-next img,
+.partners__button-perv img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.partners__button-perv {
+  margin-right: 15px;
+}
+
+.icon-partners {
+  max-width: 950px;
+  overflow: hidden;
+}
+
+.icon-partners__slide {
+  height: 100%;
+  margin: 0 50px;
+  cursor: pointer;
+}
+
+.icon-partners__slide.slick-current {
+  background-color: #f5f3f4;
+}
+
+.main-slider {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-slider__text {
+  font-size: 22px;
+  line-height: 27px;
+}
+
+.main-slider__author {
+  margin-top: 35px;
+  padding-left: 50px;
+}
+
+.author {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.author__name {
+  font-weight: 500;
+}
+
+.author__company {
+  color: #999;
+}
+
 .main-footer {
   position: relative;
   z-index: 20;
@@ -2202,17 +2395,6 @@ button.swiper-pagination-bullet {
 
 .main-footer__copy a {
   color: #8d7431;
-}
-
-/* Partners
-==========================================*/
-
-.icon-partners {
-  overflow: hidden;
-}
-
-.main-slider {
-  overflow: hidden;
 }
 
 @media (min-width: 530px) {
@@ -2512,6 +2694,22 @@ button.swiper-pagination-bullet {
 
   .feedback {
     padding-bottom: calc(50px + 50 * ((100vw - 320px) / 890));
+  }
+
+  .partners {
+    padding-top: calc(50px + 50 * ((100vw - 320px) / 890));
+  }
+
+  .partners {
+    padding-bottom: calc(50px + 50 * ((100vw - 320px) / 890));
+  }
+
+  .partners__title {
+    margin-bottom: calc(50px + 30 * ((100vw - 320px) / 890));
+  }
+
+  .partners__icons {
+    margin-bottom: calc(50px + 75 * ((100vw - 320px) / 890));
   }
 
   .main-footer__top {
@@ -2945,6 +3143,12 @@ button.swiper-pagination-bullet {
 
   .burger-nav__list {
     padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-partners__slide {
+    margin: 0 80px;
   }
 }
 
