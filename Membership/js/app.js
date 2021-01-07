@@ -296,26 +296,30 @@ counterSliders.forEach(el => {
 });
 
 // Partners sliders
-let iconSlider = document.querySelector('.icon-partners');
-let mainSlider = document.querySelector('.main-slider');
+// let iconSlider = document.querySelector('.icon-partners');
+// let mainSlider = document.querySelector('.main-slider');
 
-let mySwiperIcon = new Swiper (iconSlider, {
-    spaceBetween: 10,
-    slidesPerView: 5,
-});
+// let mySwiperIcon = new Swiper (iconSlider, {
+//     spaceBetween: 10,
+//     slidesPerView: 5,
+//     // centeredSlides: true,
+//     initialSlide: 3,
+    
+// });
 
-let mySwipermain = new Swiper (mainSlider, {
-    slidesPerView: 1,
-    // loop: true,
-    // loopedSlides: 5,
-    navigation: {
-        nextEl: '.partners__button-next',
-        prevEl: '.partners__button-perv',
-    },
-    // thumbs: {
-    //     swiper: mySwiperIcon,
-    // },
-});;
+// let mySwipermain = new Swiper (mainSlider, {
+//     slidesPerView: 1,
+//     // loop: true,
+//     // loopedSlides: 5,
+//     initialSlide: 3,
+//     navigation: {
+//         nextEl: '.partners__button-next',
+//         prevEl: '.partners__button-perv',
+//     },
+//     thumbs: {
+//         swiper: mySwiperIcon,
+//     },
+// });;
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
