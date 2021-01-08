@@ -125,7 +125,7 @@ body {
   line-height: 1.2;
 }
 
-body.lock {
+body._lock {
   overflow: hidden;
 }
 
@@ -589,7 +589,7 @@ body.lock {
 }
 
 .intro__btn {
-  min-width: 267px;
+  min-width: 215px;
   margin-top: 50px;
 }
 

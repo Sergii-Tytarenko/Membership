@@ -177,9 +177,9 @@ let introWrap = document.querySelector('.intro__wrap');
 const mainHeader = document.querySelector('.main-header');
 const burger = document.querySelector('.burger');
 
-document.addEventListener('scroll', function() {
+function parallax () {
     let moveHeight = pageYOffset;
-    
+
     if ( moveHeight > 0) {
         let movePosition = moveHeight * .25;
         if (movePosition >= 0 && movePosition <= 150){
@@ -187,16 +187,19 @@ document.addEventListener('scroll', function() {
             mainHeader.style.transform = `translateY(-${movePosition}px)`;
         }
     }
-});
+};
+
+parallax ();
+window.addEventListener('scroll', parallax);
 
 
 // Main Header show 
 let introWrapHeight = introWrap.offsetHeight;
-
 window.addEventListener('scroll', headScroll);
-function headScroll() {
-	let src_value = pageYOffset;
 
+function headScroll() {
+    let src_value = pageYOffset;
+    
 	if (mainHeader !== null) {
 		if (src_value  > introWrapHeight + 50) {
             mainHeader.classList.add('scroll');
@@ -230,6 +233,7 @@ closeNav.addEventListener('click', function(){
 
 // Close menu when links is active
 let burgerNavLink = burgerNav.querySelectorAll("a");
+let  unlock = true;
 
 for (let i = 0; i < burgerNavLink.length; i++) {
 	 let navLink = burgerNavLink[i];
@@ -240,8 +244,10 @@ for (let i = 0; i < burgerNavLink.length; i++) {
 }
 
 document.addEventListener("click", function (e) {
-    if (e.target.classList.contains('nav-header__link') || e.target.classList.contains('main-header__button')
-        || e.target.classList.contains('main-header__container')) {
+    if ( (e.target.classList.contains('nav-header__link') 
+        || e.target.classList.contains('main-header__button')
+        || e.target.classList.contains('main-header__container') ) 
+        && burgerNav.classList.contains('active')) {
         closeBurgerNav ();
     }
 });
@@ -250,14 +256,14 @@ document.addEventListener("click", function (e) {
 function showBurgerNav () {
     burgerNav.classList.add('active');
     mainHeader.classList.add('active');
-    // body.classList.add('lock');
+    body_lock(0);
 }
 
 function closeBurgerNav () {
     burger.classList.remove('active');
     burgerNav.classList.remove('active');
     mainHeader.classList.remove('active');
-    // body.classList.remove('lock');
+    body_lock(0);
 }
 
 // Counter sliders
@@ -328,14 +334,17 @@ $(document).ready(function(){
     });
   });
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     $('.main-slider__list').slick({
         slidesToShow: 1,
         prevArrow: false,
         nextArrow: false,
         asNavFor: '.icon-partners__list',
     });
-  });;
+  });
+
+
+;
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
@@ -461,4 +470,51 @@ spollerInit ();
 window.addEventListener('resize', () => {
 	spollerInit ();
 	spollersGo = true;
-});;
+});
+
+
+//BodyLock
+function body_lock(delay) {
+    let body = document.querySelector("body");
+    if (body.classList.contains("_lock")) {
+      body_lock_remove(delay);
+    } else {
+      body_lock_add(delay);
+    }
+  }
+  function body_lock_remove(delay) {
+    let body = document.querySelector("body");
+    if (unlock) {
+      let lock_padding = document.querySelectorAll("._lp");
+      setTimeout(() => {
+        for (let index = 0; index < lock_padding.length; index++) {
+          const el = lock_padding[index];
+          el.style.paddingRight = "0px";
+        }
+        body.style.paddingRight = "0px";
+        body.classList.remove("_lock");
+      }, delay);
+  
+      unlock = false;
+      setTimeout(function () {
+        unlock = true;
+      }, delay);
+    }
+  }
+  function body_lock_add(delay) {
+    let body = document.querySelector("body");
+    if (unlock) {
+      let lock_padding = document.querySelectorAll("._lp");
+      for (let index = 0; index < lock_padding.length; index++) {
+        const el = lock_padding[index];
+        el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+      }
+      body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+      body.classList.add("_lock");
+  
+      unlock = false;
+      setTimeout(function () {
+        unlock = true;
+      }, delay);
+    }
+  };
