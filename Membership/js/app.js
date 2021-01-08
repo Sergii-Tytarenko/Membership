@@ -224,7 +224,6 @@ burger.addEventListener('click', function () {
 });
 
 closeNav.addEventListener('click', function(){
-    burger.classList.remove('active');
     closeBurgerNav ();
 });
 
@@ -236,10 +235,16 @@ for (let i = 0; i < burgerNavLink.length; i++) {
 	 let navLink = burgerNavLink[i];
 
 	navLink.addEventListener("click", function() {
-        burger.classList.remove('active');
         closeBurgerNav ();
 	});
 }
+
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains('nav-header__link') || e.target.classList.contains('main-header__button')
+        || e.target.classList.contains('main-header__container')) {
+        closeBurgerNav ();
+    }
+});
 
 // Functions of burger nav
 function showBurgerNav () {
@@ -249,6 +254,7 @@ function showBurgerNav () {
 }
 
 function closeBurgerNav () {
+    burger.classList.remove('active');
     burgerNav.classList.remove('active');
     mainHeader.classList.remove('active');
     // body.classList.remove('lock');
