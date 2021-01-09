@@ -901,7 +901,7 @@ body._lock {
 
 .projects__btn {
   margin-top: 65px;
-  min-width: 267px;
+  min-width: 215px;
 }
 
 .item-projects {
@@ -2251,7 +2251,8 @@ button.swiper-pagination-bullet {
 
 .icon-partners__slide {
   height: 100%;
-  margin: 0 50px;
+  margin: 0 40px;
+  padding: 10px;
   cursor: pointer;
 }
 
