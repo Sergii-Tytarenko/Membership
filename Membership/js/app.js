@@ -172,24 +172,27 @@ for (let smoothLink of smoothLinks) {
 };
 
 
-// Intro parallax
+
+const body = document.querySelector('body');
 let introWrap = document.querySelector('.intro__wrap');
 const mainHeader = document.querySelector('.main-header');
 const burger = document.querySelector('.burger');
+let burgerNav = document.querySelector('.burger-nav');
+const closeNav = document.querySelector('.burger-nav__close');
 
+// Intro parallax
 function parallax () {
-    let moveHeight = pageYOffset;
+    let moveHeight =  window.pageYOffset;
+    let movePosition = moveHeight * .25;
 
-    if ( moveHeight > 0) {
-        let movePosition = moveHeight * .25;
-        if (movePosition >= 0 && movePosition <= 150){
+    if (movePosition >= 0 && movePosition <= 150) {
+        if (window.innerWidth > 767) {
             introWrap.style.transform = `translateY(-${movePosition}px)`;
-            mainHeader.style.transform = `translateY(-${movePosition}px)`;
-        }
+        };
+        mainHeader.style.transform = `translateY(-${movePosition}px)`;
     }
 };
 
-parallax ();
 window.addEventListener('scroll', parallax);
 
 
@@ -211,10 +214,6 @@ function headScroll() {
 
 // Burger active
 // Show burger nav
-let burgerNav = document.querySelector('.burger-nav');
-let body = document.querySelector('body');
-const closeNav = document.querySelector('.burger-nav__close');
-
 burger.addEventListener('click', function () {
     if (burger) {
         burger.classList.toggle('active');
