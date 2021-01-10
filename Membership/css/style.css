@@ -1686,7 +1686,7 @@ button.swiper-pagination-bullet {
 }
 
 .counter__body {
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .counter__list {
@@ -1975,9 +1975,9 @@ button.swiper-pagination-bullet {
 
 .cell__text {
   color: black;
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: color .2s;
+  -o-transition: color .2s;
+  transition: color .2s;
 }
 
 /* Services
@@ -2463,8 +2463,8 @@ button.swiper-pagination-bullet {
 
   .cell__photo:hover,
   .cell__photo:focus {
-    -webkit-box-shadow: 5px 5px 10px gray;
-            box-shadow: 5px 5px 10px gray;
+    -webkit-box-shadow: 5px 5px 8px gray;
+            box-shadow: 5px 5px 8px gray;
   }
 
   .cell__photo img:hover,
@@ -2475,7 +2475,7 @@ button.swiper-pagination-bullet {
 
   .cell__text:hover,
   .cell__text:focus {
-    text-decoration: underline;
+    color: #a97900;
   }
 
   .main-footer__copy a:hover,
@@ -2525,7 +2525,7 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 1500px) {
   .intro__title {
-    font-size: 50px;
+    font-size: 55px;
   }
 }
 
@@ -2541,7 +2541,7 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 1366px) {
   .intro__title {
-    font-size: 45px;
+    font-size: 48px;
   }
 }
 
@@ -2775,10 +2775,6 @@ button.swiper-pagination-bullet {
     top: 0;
     left: 0;
     background-color: rgba(235, 236, 238, 0.6);
-  }
-
-  .intro__title {
-    font-weight: 400;
   }
 
   .services__body {
