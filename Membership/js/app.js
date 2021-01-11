@@ -191,25 +191,34 @@ function parallax () {
         };
         mainHeader.style.transform = `translateY(-${movePosition}px)`;
     }
-};
+}
 
-window.addEventListener('scroll', parallax);
+if (introWrap) {
+    window.addEventListener('scroll', parallax);
+}
 
 
 // Main Header show 
-let introWrapHeight = introWrap.offsetHeight;
 window.addEventListener('scroll', headScroll);
 
 function headScroll() {
     let src_value = pageYOffset;
     
-	if (mainHeader !== null) {
-		if (src_value  > introWrapHeight + 50) {
+    if (introWrap && mainHeader !== null) {
+        let introWrapHeight = introWrap.offsetHeight;
+
+        if (src_value  > introWrapHeight + 50) {
             mainHeader.classList.add('scroll');
 		} else {
 			mainHeader.classList.remove('scroll');
 		}
-	}
+    } else if (mainHeader !== null) {
+        if (src_value > 100) {
+            mainHeader.classList.add('scroll');
+		} else {
+			mainHeader.classList.remove('scroll');
+		}
+    }
 }
 
 // Burger active
