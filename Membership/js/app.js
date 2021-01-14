@@ -340,18 +340,45 @@ $(document).ready(function(){
             }
           ]
     });
-  });
+});
 
-  $(document).ready(function() {
+$(document).ready(function() {
     $('.main-slider__list').slick({
         slidesToShow: 1,
         prevArrow: false,
         nextArrow: false,
         asNavFor: '.icon-partners__list',
     });
-  });
+});
+
+// Feedback parallax
 
 
+function FeedbackMove () {
+   
+    // let scroll = window.pageYOffset;
+    const feedback = document.querySelector('.feedback');
+    let feedbackPlsition = feedback.getBoundingClientRect().top;
+    console.log(feedbackPlsition);
+    // console.log(scroll);
+    
+    if (feedbackPlsition == scroll) {
+        console.log('Ok');
+    }
+    // let moveHeight =  window.pageYOffset;
+    // let movePosition = moveHeight * .25;
+
+    // if (movePosition >= 0 && movePosition <= 150) {
+    //     if (window.innerWidth > 767) {
+    //         introWrap.style.transform = `translateY(-${movePosition}px)`;
+    //     };
+    //     mainHeader.style.transform = `translateY(-${movePosition}px)`;
+    // }
+}
+
+if (feedback) {
+    window.addEventListener('scroll', FeedbackMove);
+}
 ;
 function testWebP(callback) {
 	var webP = new Image();

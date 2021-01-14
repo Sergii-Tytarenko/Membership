@@ -286,6 +286,10 @@ body._lock {
   height: 50px;
 }
 
+.inner-page .main-header__button {
+  margin-left: auto;
+}
+
 .nav-header__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2535,7 +2539,7 @@ button.swiper-pagination-bullet {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.2;
-  border: 1px solid #6f857da2;
+  border: 1px solid #8a8f8d67;
 }
 
 .form-contact__input::-webkit-input-placeholder, .form-contact__text::-webkit-input-placeholder {
@@ -2695,7 +2699,7 @@ button.swiper-pagination-bullet {
   .form-contact__btn:focus {
     -webkit-box-shadow: none;
             box-shadow: none;
-    background-color: #6c8f83;
+    background-color: #6a847b;
   }
 }
 
