@@ -226,7 +226,7 @@ body._lock {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 100;
   height: 1px;
   min-height: 176px;
   width: 100%;
@@ -2619,6 +2619,196 @@ button.swiper-pagination-bullet {
   transition: background .3s;
 }
 
+/* Modal - Enter
+==========================================*/
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 110;
+  display: none;
+  max-height: 100vh;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.75);
+          box-shadow: 0 30px 50px rgba(0, 0, 0, 0.75);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 105;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-link {
+  color: #2f61bf;
+  font-weight: 400;
+}
+
+.modal-link:hover,
+.modal-link:focus {
+  text-decoration: underline;
+}
+
+.modal-show {
+  display: block;
+}
+
+/* Modal Enter
+========================================== */
+
+.modal-enter {
+  padding: 25px 0;
+  width: 350px;
+  background-color: #fff;
+  overflow-y: auto;
+  -webkit-animation-name: show-modal;
+          animation-name: show-modal;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.modal-enter__title {
+  margin-bottom: 25px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  color: #222;
+  text-align: center;
+}
+
+.modal-enter__footer {
+  margin: 25px 10px 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.modal-enter__link {
+  float: right;
+}
+
+.modal-enter__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 18px;
+  padding: 3px;
+  border-radius: 0 0 0 2px;
+  background-color: #c6d3d0;
+  cursor: pointer;
+  -webkit-transition: background .3s ease;
+  -o-transition: background .3s ease;
+  transition: background .3s ease;
+}
+
+.modal-enter__close:hover,
+.modal-enter__close:focus {
+  background-color: #709089;
+}
+
+.form-enter {
+  padding: 20px;
+  background-color: #d8d8d8;
+}
+
+.form-enter__group {
+  margin-bottom: 20px;
+}
+
+.form-enter__label {
+  display: inline-block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.form-enter__input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+.form-enter__input:focus {
+  outline: 2px solid  #a1b3ad;
+}
+
+.form-enter__link {
+  float: right;
+}
+
+.form-enter__button {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn--form {
+  width: 100%;
+  height: 35px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: initial;
+  text-transform: none;
+  letter-spacing: 1px;
+  background-color: #a1b3ad;
+  border-radius: 5px;
+}
+
+/* Animation modal
+========================================== */
+
+@-webkit-keyframes show-modal {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
+    opacity: .5;
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes show-modal {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
+    opacity: .5;
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
 @media (min-width: 530px) {
   .counter__pagination {
     display: none;
@@ -2697,6 +2887,13 @@ button.swiper-pagination-bullet {
 
   .form-contact__btn:hover,
   .form-contact__btn:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background-color: #6a847b;
+  }
+
+  .btn--form:hover,
+  .btn--form:focus {
     -webkit-box-shadow: none;
             box-shadow: none;
     background-color: #6a847b;
@@ -3441,6 +3638,10 @@ button.swiper-pagination-bullet {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+  }
+
+  .modal-enter {
+    width: 100%;
   }
 }
 
