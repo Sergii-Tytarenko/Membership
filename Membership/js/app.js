@@ -367,10 +367,10 @@ $(document).ready(function() {
 const logIn = document.querySelector('.main-header__button')
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.modal-overlay');
-const modalCloseBtn = modal.querySelector('.modal-close');
+const modalCloseBtn = document.querySelectorAll('.modal-close');
 
 logIn.addEventListener('click', (el) => {
-    el.preventDefault();
+    el.preventDefault ();
     modalShow();
 });
 
@@ -378,10 +378,13 @@ overlay.addEventListener('click', () => {
     modalClose();
 });
 
-modalCloseBtn.addEventListener('click', () => {
-    modalClose();
-});
-
+if (modalCloseBtn) {
+    modalCloseBtn.forEach( (el) => {
+        el.addEventListener('click', () => {
+            modalClose();
+        });
+    })
+}
 
 function modalShow () {
     modal.classList.add('modal-show');

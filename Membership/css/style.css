@@ -2647,16 +2647,6 @@ button.swiper-pagination-bullet {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.modal-link {
-  color: #2f61bf;
-  font-weight: 400;
-}
-
-.modal-link:hover,
-.modal-link:focus {
-  text-decoration: underline;
-}
-
 .modal-show {
   display: block;
 }
@@ -2693,6 +2683,13 @@ button.swiper-pagination-bullet {
 
 .modal-enter__link {
   float: right;
+  color: #2f61bf;
+  font-weight: 400;
+}
+
+.modal-enter__link:hover,
+.modal-enter__link:focus {
+  text-decoration: underline;
 }
 
 .modal-enter__close {
@@ -2747,6 +2744,13 @@ button.swiper-pagination-bullet {
 
 .form-enter__link {
   float: right;
+  color: #2f61bf;
+  font-weight: 400;
+}
+
+.form-enter__link:hover,
+.form-enter__link:focus {
+  text-decoration: underline;
 }
 
 .form-enter__button {
