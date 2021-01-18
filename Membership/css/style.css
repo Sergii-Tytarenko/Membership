@@ -639,6 +639,9 @@ body._lock {
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
   padding: 0 20px;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .item-benefits__photo {
@@ -909,8 +912,11 @@ body._lock {
   text-align: center;
 }
 
-.projects__btn {
+.projects__row {
   margin-top: 65px;
+}
+
+.projects__btn {
   min-width: 215px;
 }
 
@@ -2855,6 +2861,44 @@ button.swiper-pagination-bullet {
             box-shadow: 0 0 10px #999;
   }
 
+  .benefits .benefits__column {
+    -webkit-transform: translate(0, 50px);
+        -ms-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+    opacity: 0;
+  }
+
+  .benefits .benefits__column--l {
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+
+  .benefits .benefits__column--r {
+    -webkit-transform: translate(50%, 0);
+        -ms-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+  }
+
+  .benefits.active .benefits__column {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .benefits.active .benefits__column--l {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
+  .benefits.active .benefits__column--r {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
   .news__labels a:hover,
   .news__labels a:focus,
   .news .cell__labels a:hover,
@@ -2882,6 +2926,23 @@ button.swiper-pagination-bullet {
   .cell__text:hover,
   .cell__text:focus {
     color: #a97900;
+  }
+
+  .services__head {
+    -webkit-transform: translate(0, 100%);
+        -ms-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+    opacity: 0;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+  }
+
+  .services.active .services__head {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
   }
 
   .main-footer__copy a:hover,
@@ -2988,36 +3049,10 @@ button.swiper-pagination-bullet {
   .projects__content {
     max-width: 90%;
     margin: 0 auto;
+  }
+
+  .projects__row {
     text-align: center;
-  }
-
-  .projects__title {
-    text-align: center;
-  }
-
-  .projects__text {
-    text-align: center;
-  }
-
-  .projects__list {
-    text-align: center;
-  }
-
-  .projects__item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
-  .item-projects__icon {
-    -ms-flex-item-align: initial;
-        -ms-grid-row-align: initial;
-        align-self: initial;
-    margin: 0 0 20px 0;
   }
 }
 
@@ -3075,7 +3110,7 @@ button.swiper-pagination-bullet {
     padding-bottom: calc(40px + 40 * ((100vw - 320px) / 890));
   }
 
-  .projects__btn {
+  .projects__row {
     margin-top: calc(45px + 20 * ((100vw - 320px) / 890));
   }
 
@@ -3410,6 +3445,12 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (max-width: 725px) {
+  .projects__content {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 676px) {
   .main-header__container {
     -webkit-box-pack: justify;
@@ -3610,11 +3651,30 @@ button.swiper-pagination-bullet {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
   .projects__content {
-    max-width: 100%;
+    text-align: center;
   }
 
+  .projects__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .item-projects__icon {
+    -ms-flex-item-align: initial;
+        -ms-grid-row-align: initial;
+        align-self: initial;
+    margin: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 420px) {
   .prices__btn {
     width: 70%;
   }

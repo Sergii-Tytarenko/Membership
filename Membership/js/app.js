@@ -402,7 +402,50 @@ document.addEventListener('keydown', function (e) {
 	if (e.code === 'Escape') {
 		modalClose();
 	}
-});;
+});
+
+
+/* Scroll animation
+-----------------------------------------------------------------------------*/
+let animBlocks = document.querySelectorAll('.anim-block');
+
+if (animBlocks.length > 0) {
+    window.addEventListener('scroll', animOnScroll);
+
+    function animOnScroll() {
+        for (animBlock of animBlocks) {
+            let animBlcokHeight = animBlock.offsetHeight;
+            let anaimBlockPosition = offset(animBlock).top;
+            let animBlcokStart = 2;
+
+            let animBlockPoint = window.innerHeight - animBlcokHeight / animBlcokStart;
+
+            if (animBlcokHeight > window.innerHeight) {
+                animBlcolPoint = window.innerHeight - window.innerHeight / animBlcokStart;
+            }
+
+            if ((pageYOffset > anaimBlockPosition - animBlockPoint) && pageYOffset < (anaimBlockPosition + animBlcokHeight)) {
+                animBlock.classList.add('active');
+            } else if (!animBlock.classList.contains('anim-no-hide')) {
+                animBlock.classList.remove('active');
+            }
+        }
+    };
+
+    function offset(el) {
+        let rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+    
+    
+    setTimeout(() => {
+        animOnScroll();
+    }, 400);
+}
+
+;
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
