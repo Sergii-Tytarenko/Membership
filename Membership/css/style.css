@@ -2660,7 +2660,7 @@ button.swiper-pagination-bullet {
 /* Modal Enter
 ========================================== */
 
-.modal-enter {
+.modal--enter {
   padding: 25px 0;
   width: 350px;
   background-color: #fff;
@@ -2673,7 +2673,7 @@ button.swiper-pagination-bullet {
           animation-timing-function: ease-in-out;
 }
 
-.modal-enter__title {
+.enter-box__title {
   margin-bottom: 25px;
   font-family: 'Nunito', sans-serif;
   font-size: 24px;
@@ -2681,24 +2681,24 @@ button.swiper-pagination-bullet {
   text-align: center;
 }
 
-.modal-enter__footer {
+.enter-box__footer {
   margin: 25px 10px 0;
   padding: 15px;
   border: 1px solid #ccc;
 }
 
-.modal-enter__link {
+.enter-box__link {
   float: right;
   color: #2f61bf;
   font-weight: 400;
 }
 
-.modal-enter__link:hover,
-.modal-enter__link:focus {
+.enter-box__link:hover,
+.enter-box__link:focus {
   text-decoration: underline;
 }
 
-.modal-enter__close {
+.enter-box__close {
   position: absolute;
   top: 0;
   right: 0;
@@ -2713,8 +2713,8 @@ button.swiper-pagination-bullet {
   transition: background .3s ease;
 }
 
-.modal-enter__close:hover,
-.modal-enter__close:focus {
+.enter-box__close:hover,
+.enter-box__close:focus {
   background-color: #709089;
 }
 
@@ -2859,6 +2859,10 @@ button.swiper-pagination-bullet {
   .btn:focus {
     -webkit-box-shadow: 0 0 10px #999;
             box-shadow: 0 0 10px #999;
+  }
+
+  .intro__wrap {
+    min-height: 600px;
   }
 
   .benefits .benefits__column {
@@ -3704,7 +3708,7 @@ button.swiper-pagination-bullet {
         align-self: center;
   }
 
-  .modal-enter {
+  .modal--enter {
     width: 100%;
   }
 }
