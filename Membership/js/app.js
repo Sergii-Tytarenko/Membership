@@ -275,7 +275,7 @@ function closeBurgerNav () {
     burger.classList.remove('active');
     burgerNav.classList.remove('active');
     mainHeader.classList.remove('active');
-    if (!modal.classList.contains('modal-show')) {
+    if (!overlay.classList.contains('modal-show')) {
         body_lock(0);
     }
 }
@@ -364,49 +364,61 @@ $(document).ready(function() {
 
 /* Modal Windows
 -----------------------------------------------------------------------------*/
-const logIn = document.querySelector('.main-header__button')
-const modal = document.querySelector('.modal--enter');
+let modalLinks = document.querySelectorAll('.modal-link');
 const overlay = document.querySelector('.modal-overlay');
-const modalCloseBtn = document.querySelectorAll('.modal-close');
 
-logIn.addEventListener('click', (el) => {
-    el.preventDefault ();
-    modalShow();
-});
+if (modalLinks.length > 0) {
+    for (let i = 0; i < modalLinks.length; i++) {
+        let modalLink = modalLinks[i];
 
-overlay.addEventListener('click', () => {
-    modalClose();
-});
+        modalLink.addEventListener('click', () => {
+            let linkTarget = modalLink.dataset.modal;
+            let modalWindow = document.querySelector(`${linkTarget}`);
 
-if (modalCloseBtn) {
-    modalCloseBtn.forEach( (el) => {
-        el.addEventListener('click', () => {
-            modalClose();
+            modalActive(modalWindow);
         });
-    })
+        
+    }
 }
 
-function modalShow () {
-    modal.classList.add('modal-show');
+function modalActive (target) {
+    if (target) {
+        modalShow (target);
+
+        let closeBtn = target.querySelector('.modal-close');
+
+        closeBtn.addEventListener('click', () => {
+            modalClose (target);
+        });
+
+        overlay.addEventListener('click', () => {
+            modalClose (target);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.code === 'Escape') {
+                modalClose (target);
+            }
+        });
+    }
+}
+
+function modalShow (target) {
+    target.classList.add('modal-show');
     overlay.classList.add('modal-show');
     if (burgerNav.classList.contains('active')) {
         closeBurgerNav ();
     } else {
-          body_lock(0);
+        body_lock(0);
     }
 }
 
-function modalClose () {
-    modal.classList.remove('modal-show');
+function modalClose (target) {
+    target.classList.remove('modal-show');
     overlay.classList.remove('modal-show');
     body_lock(0);
 }
 
-document.addEventListener('keydown', function (e) {
-	if (e.code === 'Escape') {
-		modalClose();
-	}
-});
 
 
 /* Scroll animation

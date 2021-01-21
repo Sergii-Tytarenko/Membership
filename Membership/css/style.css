@@ -2640,6 +2640,7 @@ button.swiper-pagination-bullet {
           transform: translate(-50%, -50%);
   -webkit-box-shadow: 0 0 5px rgba(93, 93, 93, 0.76);
           box-shadow: 0 0 5px rgba(93, 93, 93, 0.76);
+  overflow-y: auto;
 }
 
 .modal-overlay {
@@ -2657,14 +2658,21 @@ button.swiper-pagination-bullet {
   display: block;
 }
 
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transition: background .3s ease;
+  -o-transition: background .3s ease;
+  transition: background .3s ease;
+  cursor: pointer;
+}
+
 /* Modal Enter
 ========================================== */
 
 .modal--enter {
-  padding: 25px 0;
   width: 350px;
-  overflow-y: auto;
-  background-color: #424242;
   -webkit-animation-name: show-modal;
           animation-name: show-modal;
   -webkit-animation-duration: .5s;
@@ -2674,7 +2682,9 @@ button.swiper-pagination-bullet {
 }
 
 .enter-box {
+  padding: 25px 0;
   color: #fff;
+  background-color: #424242;
 }
 
 .enter-box__title {
@@ -2702,18 +2712,11 @@ button.swiper-pagination-bullet {
 }
 
 .enter-box__close {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 30px;
   height: 18px;
   padding: 3px;
   border-radius: 0 0 0 2px;
-  background-color: #699788;
-  cursor: pointer;
-  -webkit-transition: background .3s ease;
-  -o-transition: background .3s ease;
-  transition: background .3s ease;
+  background-color: #414e4a;
 }
 
 .enter-box__close:hover,
@@ -2778,6 +2781,102 @@ button.swiper-pagination-bullet {
   letter-spacing: 1px;
   background-color: #699788;
   border-radius: 5px;
+}
+
+/* Modal start
+========================================== */
+
+.modal--start {
+  padding: 25px 15px;
+  width: 90vw;
+  max-width: 600px;
+  background-color: #e3e5e6;
+  border-radius: 3px;
+  -webkit-box-shadow: 10px 10px 20px rgba(64, 63, 63, 0.76);
+          box-shadow: 10px 10px 20px rgba(64, 63, 63, 0.76);
+}
+
+.start-box__close {
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+}
+
+.start-box__title {
+  margin-bottom: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.start-box__info {
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.start-form {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.start-form__group {
+  margin-bottom: 20px;
+}
+
+.start-form__input,
+.start-form__price {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+.start-form__input:focus,
+.start-form__price:focus {
+  outline: 1px solid  #647972;
+}
+
+.start-form__input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.start-form__input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.start-form__input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.start-form__input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.start-form__input:focus::placeholder {
+  color: transparent;
+}
+
+.start-form__license {
+  margin-bottom: 10px;
+}
+
+.start-form__opt {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.start-form__row {
+  text-align: center;
+}
+
+.start-form__btn {
+  height: 40px;
+  font-weight: 500;
 }
 
 /* Animation modal
