@@ -365,7 +365,7 @@ $(document).ready(function() {
 /* Modal Windows
 -----------------------------------------------------------------------------*/
 let modalLinks = document.querySelectorAll('.modal-link');
-const overlay = document.querySelector('.modal-overlay');
+const overlay = document.querySelector('.overlay');
 
 if (modalLinks.length > 0) {
     for (let i = 0; i < modalLinks.length; i++) {
@@ -385,7 +385,7 @@ function modalActive (target) {
     if (target) {
         modalShow (target);
 
-        let closeBtn = target.querySelector('.modal-close');
+        let closeBtn = target.querySelector('.modal__close');
 
         closeBtn.addEventListener('click', () => {
             modalClose (target);
@@ -460,7 +460,6 @@ if (animBlocks.length > 0) {
         animOnScroll();
     }, 400);
 }
-
 ;
 /* Webp images
 -----------------------------------------------------------------------------*/
