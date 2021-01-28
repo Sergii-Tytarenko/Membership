@@ -268,11 +268,9 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  max-width: 1950px;
-}
-
-.main-header__burger {
-  margin-left: 70px;
+  max-width: 1920px;
+  padding-right: 45px;
+  padding-left: 70px;
 }
 
 .main-header__nav {
@@ -280,8 +278,6 @@ body._lock {
 }
 
 .main-header__button {
-  margin-left: 80px;
-  margin-right: 45px;
   min-width: 167px;
   height: 50px;
 }
@@ -912,6 +908,10 @@ body._lock {
   text-align: center;
 }
 
+.projects__item {
+  margin-bottom: 40px;
+}
+
 .projects__row {
   margin-top: 65px;
 }
@@ -921,23 +921,60 @@ body._lock {
 }
 
 .item-projects {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 40px;
+  padding-left: 70px;
+  -webkit-transform: translate(50%, 0);
+      -ms-transform: translate(50%, 0);
+          transform: translate(50%, 0);
+  opacity: 0;
 }
 
-.item-projects:last-child {
-  margin: 0;
+.item-projects.active {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
 }
 
-.item-projects__icon {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin-right: 35px;
+._no-webp .item-projects--voice {
+  background-image: url("../img/projects/icon-1.png"); }
+
+.item-projects--voice {
+  -webkit-transition: opacity 1s, -webkit-transform .5s;
+  transition: opacity 1s, -webkit-transform .5s;
+  -o-transition: transform .5s, opacity 1s;
+  transition: transform .5s, opacity 1s;
+  transition: transform .5s, opacity 1s, -webkit-transform .5s;
+  background-position: top 5px left;
+  background-size: 40px 60px;
+  background-repeat: no-repeat;
+}
+
+._no-webp .item-projects--music {
+  background-image: url("../img/projects/icon-2.png"); }
+
+.item-projects--music {
+  -webkit-transition: opacity 1.4s,  -webkit-transform .9s;
+  transition: opacity 1.4s,  -webkit-transform .9s;
+  -o-transition: transform .9s,  opacity 1.4s;
+  transition: transform .9s,  opacity 1.4s;
+  transition: transform .9s,  opacity 1.4s,  -webkit-transform .9s;
+  background-position: top 5px left;
+  background-size: 44px 53px;
+  background-repeat: no-repeat;
+}
+
+._no-webp .item-projects--water {
+  background-image: url("../img/projects/icon-3.png"); }
+
+.item-projects--water {
+  -webkit-transition: opacity 1.8s,  -webkit-transform 1.3s;
+  transition: opacity 1.8s,  -webkit-transform 1.3s;
+  -o-transition: transform 1.3s,  opacity 1.8s;
+  transition: transform 1.3s,  opacity 1.8s;
+  transition: transform 1.3s,  opacity 1.8s,  -webkit-transform 1.3s;
+  background-position: top 5px left;
+  background-size: 44px 30px;
+  background-repeat: no-repeat;
 }
 
 .item-projects__title {
@@ -2662,8 +2699,8 @@ button.swiper-pagination-bullet {
 
 .modal__close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 8px;
+  right: 8px;
   width: 15px;
   height: 15px;
   background: transparent url("../img/icons/close-dark.svg") center/cover no-repeat;
@@ -2913,6 +2950,26 @@ button.swiper-pagination-bullet {
   margin-bottom: 20px;
 }
 
+.start-form__group--select {
+  position: relative;
+}
+
+.start-form__group--select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  pointer-events: none;
+  border-style: solid;
+  border-width: 7px 5px 0 5px;
+  border-color: #69706d transparent transparent transparent;
+}
+
 .start-form__input,
 .start-form__rate {
   display: block;
@@ -2955,10 +3012,13 @@ button.swiper-pagination-bullet {
 }
 
 .start-form__rate {
-  position: relative;
   font-family: inherit;
   font-size: 14px;
   background: #fff;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
 }
 
 .start-form__opt {
@@ -3064,6 +3124,10 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 677px) {
+  .main-header__button {
+    margin-left: 40px;
+  }
+
   .nav-header__list li:first-child {
     margin: 0;
   }
@@ -3097,6 +3161,10 @@ button.swiper-pagination-bullet {
   .btn:focus {
     -webkit-box-shadow: 0 0 10px #999;
             box-shadow: 0 0 10px #999;
+  }
+
+  .main-header__button {
+    margin-left: 80px;
   }
 
   .intro__wrap {
@@ -3316,16 +3384,12 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 1210px) {
-  .main-header__burger {
-    margin-left: calc(0px + 70 * ((100vw - 320px) / 890));
+  .main-header__container {
+    padding-right: calc(10px + 35 * ((100vw - 320px) / 890));
   }
 
-  .main-header__button {
-    margin-left: calc(30px + 50 * ((100vw - 320px) / 890));
-  }
-
-  .main-header__button {
-    margin-right: calc(10px + 35 * ((100vw - 320px) / 890));
+  .main-header__container {
+    padding-left: calc(10px + 60 * ((100vw - 320px) / 890));
   }
 
   .intro__text {
@@ -3700,10 +3764,6 @@ button.swiper-pagination-bullet {
             justify-content: space-between;
   }
 
-  .main-header__burger {
-    margin: 0;
-  }
-
   .main-header__nav {
     margin: 0;
   }
@@ -3779,7 +3839,6 @@ button.swiper-pagination-bullet {
 @media (max-width: 575px) {
   .main-header__button {
     height: 35px;
-    margin-right: 0;
   }
 
   .intro__btn {
@@ -3905,21 +3964,20 @@ button.swiper-pagination-bullet {
     text-align: center;
   }
 
-  .projects__item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .item-projects--voice {
+    background-position: top center;
   }
 
-  .item-projects__icon {
-    -ms-flex-item-align: initial;
-        -ms-grid-row-align: initial;
-        align-self: initial;
-    margin: 0 0 20px 0;
+  .item-projects--music {
+    background-position: top center;
+  }
+
+  .item-projects--water {
+    background-position: top 15px center;
+  }
+
+  .item-projects {
+    padding: 70px 0 0 0;
   }
 }
 
@@ -3982,3 +4040,9 @@ button.swiper-pagination-bullet {
 }
 
 ._webp .projects { background: url(../img/projects/old-moon.webp); }
+
+._webp .item-projects--voice { background-image: url(../img/projects/icon-1.webp); }
+
+._webp .item-projects--music { background-image: url(../img/projects/icon-2.webp); }
+
+._webp .item-projects--water { background-image: url(../img/projects/icon-3.webp); }
