@@ -291,6 +291,8 @@ counterSliders.forEach(el => {
         if (window.innerWidth <= 1024 && el.dataset.mobile == 'false') {
             mySwiper = new Swiper(el, {
                 slidesPerView: 1,
+                observer: true,
+                observeParents: true,
                 pagination: {
                     el: '.counter__pagination',
                     type: 'bullets',
@@ -360,7 +362,6 @@ $(document).ready(function() {
         asNavFor: '.icon-partners__list',
     });
 });
-
 
 /* Modal Windows
 -----------------------------------------------------------------------------*/
