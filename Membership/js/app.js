@@ -337,7 +337,6 @@ const partnersLabels = new Swiper('.partners__icons', {
     spaceBetween: 40,
     slideClass: 'icon-partners__slide',
     wrapperClass: 'icon-partners__list',
-    autoHeight: true,
     slideToClickedSlide: true,
     breakpoints: {
         // when window width is >= 320px
