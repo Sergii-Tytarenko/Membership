@@ -2404,6 +2404,7 @@ button.swiper-pagination-bullet {
 .main-slider__slide {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  cursor: pointer;
 }
 
 .main-slider__text {

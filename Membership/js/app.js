@@ -326,7 +326,7 @@ counterSliders.forEach(el => {
 });
 
 
-/* Partners slick-sliders 
+/* Partners sliders 
 -----------------------------------------------------------------------------*/
 const partnersLabels = new Swiper('.partners__icons', {
     slidesPerView: 5,
@@ -376,10 +376,6 @@ const partnersComment = new Swiper('.partners__main', {
         prevEl: '.partners__button-perv',
     }
 });
-
-partnersLabels.controller.control = partnersComment;
-partnersComment.controller.control = partnersLabels;
-
 
 
 /* Modal Windows
