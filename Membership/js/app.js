@@ -337,22 +337,27 @@ const partnersLabels = new Swiper('.partners__icons', {
     spaceBetween: 40,
     slideClass: 'icon-partners__slide',
     wrapperClass: 'icon-partners__list',
-    slideToClickedSlide: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: true,
+    },
+    loop: true,
+    speed: 1500,
     breakpoints: {
         // when window width is >= 320px
         320: {
-            slidesPerView: 1,
-            spaceBetween: 20
+            slidesPerView: 1.8,
+            spaceBetween: 10
         },
         // when window width is >= 420px
         420: {
-            slidesPerView: 2,
-            spaceBetween: 30
+            slidesPerView: 2.5,
+            spaceBetween: 20
         },
         // when window width is >= 575px
         575: {
-            slidesPerView: 3,
-            spaceBetween: 40
+            slidesPerView: 3.8,
+            // spaceBetween: 30
         },
         // when window width is >= 768px
         920: {
@@ -476,7 +481,22 @@ if (animBlocks.length > 0) {
         animOnScroll();
     }, 400);
 }
-;
+
+/* Play button
+---------------------------------------------------------------*/
+const videoBtn = document.querySelector('.projects__play-btn'),
+      video = document.querySelector('.projects__movie');
+
+videoBtn.addEventListener('click', () => {
+    video.classList.add('active');
+    video.play();
+    video.controls = 'true';
+});
+
+video.addEventListener('ended', () => {
+    video.classList.remove('active');
+    video.controls = '';
+});;
 /* Webp images
 -----------------------------------------------------------------------------*/
 function testWebP(callback) {

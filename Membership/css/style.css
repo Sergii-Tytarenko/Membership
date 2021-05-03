@@ -876,18 +876,77 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  min-height: 300px;
+  min-height: 350px;
   border: 30px solid #f1f1f1;
   border-radius: 20px;
 }
 
-.projects__video video {
+.projects__video {
+  position: relative;
+}
+
+.projects__movie {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.projects__movie.active {
+  z-index: 3;
+}
+
+.projects__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80px;
+  height: 80px;
+  font-size: 0;
+  background-color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: background .4s;
+  -o-transition: background .4s;
+  transition: background .4s;
+}
+
+.projects__play-btn:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.projects__play-btn:hover::after {
+  border-color: transparent transparent transparent #424242;
+}
+
+.projects__play-btn:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #494949;
+  -webkit-transition: border-color .4s;
+  -o-transition: border-color .4s;
+  transition: border-color .4s;
 }
 
 .projects__content {
@@ -3483,10 +3542,6 @@ button.swiper-pagination-bullet {
     padding-top: calc(40px + 40 * ((100vw - 320px) / 890));
   }
 
-  .projects {
-    padding-bottom: calc(40px + 40 * ((100vw - 320px) / 890));
-  }
-
   .projects__row {
     margin-top: calc(45px + 20 * ((100vw - 320px) / 890));
   }
@@ -3799,6 +3854,10 @@ button.swiper-pagination-bullet {
 
   .about__img {
     min-height: 350px;
+  }
+
+  .projects {
+    padding-bottom: 5px;
   }
 
   .projects__wrapper {
