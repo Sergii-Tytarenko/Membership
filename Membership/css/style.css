@@ -876,13 +876,13 @@ body._lock {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  min-height: 350px;
   border: 30px solid #f1f1f1;
   border-radius: 20px;
 }
 
 .projects__video {
   position: relative;
+  height: 450px;
 }
 
 .projects__movie {
@@ -3862,6 +3862,10 @@ button.swiper-pagination-bullet {
 
   .projects__wrapper {
     border: none;
+  }
+
+  .projects__video {
+    height: 350px;
   }
 
   .news__item {

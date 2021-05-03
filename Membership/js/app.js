@@ -202,17 +202,9 @@ window.addEventListener('scroll', headScroll);
 
 function headScroll() {
     let src_value = pageYOffset;
-    
-    if (introWrap && mainHeader !== null) {
-        let introWrapHeight = introWrap.offsetHeight;
-
-        if (src_value  > introWrapHeight + 50) {
-            mainHeader.classList.add('scroll');
-		} else {
-			mainHeader.classList.remove('scroll');
-		}
-    } else if (mainHeader !== null) {
-        if (src_value > 100) {
+   
+    if (mainHeader) {
+        if (src_value > 250) {
             mainHeader.classList.add('scroll');
 		} else {
 			mainHeader.classList.remove('scroll');
@@ -482,21 +474,25 @@ if (animBlocks.length > 0) {
     }, 400);
 }
 
+
 /* Play button
 ---------------------------------------------------------------*/
 const videoBtn = document.querySelector('.projects__play-btn'),
       video = document.querySelector('.projects__movie');
-
-videoBtn.addEventListener('click', () => {
-    video.classList.add('active');
-    video.play();
-    video.controls = 'true';
-});
-
-video.addEventListener('ended', () => {
-    video.classList.remove('active');
-    video.controls = '';
-});;
+      
+if (video) {
+    videoBtn.addEventListener('click', () => {
+        video.classList.add('active');
+        video.play();
+        video.controls = 'true';
+    });
+    
+    video.addEventListener('ended', () => {
+        video.classList.remove('active');
+        video.controls = '';
+    });
+}
+;
 /* Webp images
 -----------------------------------------------------------------------------*/
 function testWebP(callback) {
