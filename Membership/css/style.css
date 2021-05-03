@@ -883,6 +883,7 @@ body._lock {
 .projects__video {
   position: relative;
   height: 450px;
+  width: 100%;
 }
 
 .projects__movie {
