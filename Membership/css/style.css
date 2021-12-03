@@ -2300,10 +2300,7 @@ button.swiper-pagination-bullet {
   padding-top: 100px;
   padding-bottom: 100px;
   text-align: center;
-  background-color: #1f2323;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  overflow: hidden;
 }
 
 .feedback::after {
@@ -2349,6 +2346,14 @@ button.swiper-pagination-bullet {
 
 .feedback__row {
   margin-top: 20px;
+}
+
+.feedback__bg {
+  position: absolute; 
+  bottom: -80%; 
+  left: 0; 
+  width: 100%; 
+  height: auto;
 }
 
 /* Partners
