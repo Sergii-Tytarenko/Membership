@@ -1,0 +1,99 @@
+<!-- enter -->
+<div class="modal modal--enter" tabindex="-1" id="enter">
+    <button class="modal__close" type="button">
+        <span class="visually-hidden">Close window</span>
+    </button>
+
+    <div class="enter-box">
+        <h2 class="enter-box__title">Sign in to Membership</h2>
+
+        <form class="enter-box__form form-enter" action="#" method="POST" autocomplete="off" name="login">
+            <p class="form-enter__group">
+                <label class="form-enter__label" for="user-name">Username or email address</label>
+                <input class="form-enter__input" type="text" id="user-name" name="name" required>
+            </p>
+
+            <p class="form-enter__group">
+                <label class="form-enter__label" for="user-password">Password </label>
+                <a class="form-enter__link" href="#">Forgot password ?</a>
+                <input class="form-enter__input" type="password" id="user-password" name="password" required>
+            </p>
+
+            <p class="form-enter__row">
+                <button class="btn btn--form" type="submit">Sign in</button>
+            </p>
+        </form>
+
+        <footer class="enter-box__footer">
+            <p class="enter-box__account">
+                New to Membership? 
+                <a class="enter-box__link" href="#">Create an account.</a> 
+            </p>
+        </footer>
+    </div>
+</div>
+
+<!-- start  -->
+<div class="modal modal--start" tabindex="-1" id="start">
+    <button class="modal__close" type="button">
+        <span class="visually-hidden">Close window</span>
+    </button>
+
+    <div class="start-box">
+        <div class="start-box__column-l">
+            <div class="start__sale sale">
+                <div class="sale__row">
+                    <h2 class="sale__title">summer</h2>
+                    <h3 class="sale__subtitle">Sale</h3>
+                </div>
+
+                <div class="sale__row">
+                    <p class="sale__text">Save up to</p>
+                    <div class="sale__discount">
+                        <span class="sale__percent">25</span>
+                        
+                        <p class="sale__inner">
+                            <span class="sale__label">&percnt;</span>
+                            <span class="sale__sublabel">off</span>
+                        </p>
+                    </div>
+
+                    <p class="sale__footer">Especially for you</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="start-box__column-r">
+            <h2 class="start-box__title">Start with us</h2>
+            <p class="start-box__info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quis eaque nisi? Vero officiis reprehenderit amet, sed et nemo sit non doloremque, nam id animi nesciunt deleniti, provident excepturi minus.</p>
+
+            <form class="start-box__form start-form" action="#" method="POST" name="start" autocomplete="off">
+                <p class="start-form__group">
+                    <label class="visually-hidden" for="start-name">Enter your name</label>
+                    <input class="start-form__input" type="text" name="name" placeholder="Name" id="start-name" required>
+                </p>
+
+                <p class="start-form__group">
+                    <label class="visually-hidden" for="start-email">Enter your name</label>
+                    <input class="start-form__input" type="email" name="email" placeholder="E-mail" id="start-email" required>
+                </p>
+
+                <p class="start-form__license">Please choose a partnership option</p>
+
+                <div class="start-form__group start-form__group--select">
+                    <select class="start-form__rate" name="rate" id="rate">
+                        <option value="59$">Single License 59&#36;</option>
+                        <option value="199$">1 Year Membership 199&#36;</option>
+                        <option value="399$">Forever Membership 399&#36;</option>
+                    </select>
+                </div>
+
+                <p class="start-form__row">
+                    <button class="start-form__btn btn" type="submit">Send</button>
+                </p>
+            </form>
+        </div>
+    </div><!--/.start__box-->
+</div><!--/.start-->
+
+<div class="overlay"></div>

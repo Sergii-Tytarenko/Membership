@@ -1,0 +1,68 @@
+/* Global
+==========================================*/
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1210;
+
+body {
+    height: 100%;
+    
+    color: #333;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+	line-height: 1.2;
+}
+
+body._lock {
+	overflow: hidden;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+._container {
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.page {
+	z-index: 20;
+	flex: 1 1 auto;
+	
+	background-color: #fff;
+}
+
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+.visually-hidden {
+	position: absolute;
+  
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+  
+	white-space: nowrap;
+  
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}

@@ -1,0 +1,30 @@
+/* Forms
+==========================================*/
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    padding: 0 50px;
+
+    color: #333;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all .3s;
+    @media(min-width: 768px) {
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 10px #999;
+        }  
+    }
+}
